@@ -20,6 +20,8 @@ service: links
 provider:
   name: aws
   runtime: go1.x
+  memorySize: 128
+  endpointType: regional
 
 # you can overwrite defaults here
 #  stage: dev
@@ -55,6 +57,10 @@ package:
 functions:
   links:
     handler: bin/links
+    events:
+      - http:
+          path: /
+          method: get
 
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
