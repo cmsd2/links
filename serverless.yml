@@ -53,10 +53,6 @@ package:
    - ./public/**
 
 functions:
-  hello:
-    handler: bin/hello
-  world:
-    handler: bin/world
   links:
     handler: bin/links
 
