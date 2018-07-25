@@ -107,12 +107,12 @@ functions:
           method: get
           documentation:
             summary: "Get Links"
-          methodResponses:
-            - statusCode: "200"
-              responseBody:
-                description: "Array of links"
-              responseModels:
-                "application/json": "ListResponse"
+            methodResponses:
+              - statusCode: "200"
+                responseBody:
+                  description: "Array of links"
+                responseModels:
+                  "application/json": "ListResponse"
 
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
