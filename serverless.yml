@@ -64,6 +64,27 @@ custom:
       -
         name: "Environment"
         decription: "${self:provider.stage}"
+    models:
+      -
+        name: "Link"
+        description: "This is a link"
+        contentType: "application/json"
+        schema:
+          type: "object"
+          properties:
+            target:
+              type: "string"
+      -
+        name: "ListResponse"
+        description: "This is a list of links"
+        contentType: "application/json"
+        schema:
+          type: "object"
+          properties:
+            links:
+              type: "array"
+              items:
+                $ref: "{{model: Link}}"
     
 package:
  exclude:
@@ -79,6 +100,19 @@ functions:
       - http:
           path: /
           method: get
+          documentation:
+            summary: "Website"
+      - http:
+          path: /api/links
+          method: get
+          documentation:
+            summary: "Get Links"
+          methodResponses:
+            - statusCode: "200"
+              responseBody:
+                description: "Array of links"
+              responseModels:
+                "application/json": "ListResponse"
 
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
