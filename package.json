@@ -1,0 +1,21 @@
+{
+  "name": "links",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cmsd2/links.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cmsd2/links/issues"
+  },
+  "homepage": "https://github.com/cmsd2/links#readme",
+  "devDependencies": {
+    "serverless-aws-documentation": "^1.1.0"
+  }
+}

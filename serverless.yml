@@ -20,6 +20,7 @@ service: links
 provider:
   name: aws
   runtime: go1.x
+  stage: ${opt:stage, 'dev'}
   memorySize: 128
   endpointType: regional
 
@@ -47,6 +48,23 @@ provider:
 #  environment:
 #    variable1: value1
 
+plugins:
+  serverless-aws-documentation
+
+custom:
+  documentation:
+    info:
+      version: "1"
+      title: "Links"
+      description: "Links API"
+    tags:
+      -
+        name: "Product"
+        description: "links"
+      -
+        name: "Environment"
+        decription: "${self:provider.stage}"
+    
 package:
  exclude:
    - ./**
